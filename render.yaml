@@ -1,14 +1,8 @@
 services:
   - type: web
     name: contact-automation-api
-    runtime: python
+    env: python
     pythonVersion: 3.11
+    branch: main
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
-    envVars:
-      - key: MAIL_SENDER_EMAIL
-        scope: build
-      - key: MAIL_SENDER_PASSWORD
-        scope: build
-      - key: MAIL_RECEIVER_EMAIL
-        scope: build
