@@ -91,6 +91,7 @@ def health_check():
 
 
 @app.get("/", response_class=HTMLResponse)
+@app.head("/")
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 

@@ -7,14 +7,8 @@ services:
     startCommand: uvicorn app:app --host 0.0.0.0 --port 8000
     envVars:
       - key: MAIL_SENDER_EMAIL
-        fromDatabase:
-          name: contact_automation
-          property: MAIL_SENDER_EMAIL
+        scope: build
       - key: MAIL_SENDER_PASSWORD
-        fromDatabase:
-          name: contact_automation
-          property: MAIL_SENDER_PASSWORD
+        scope: build
       - key: MAIL_RECEIVER_EMAIL
-        fromDatabase:
-          name: contact_automation
-          property: MAIL_RECEIVER_EMAIL
+        scope: build
